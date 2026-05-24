@@ -1,0 +1,33 @@
+[package]
+name = "live-translator"
+version = "0.1.0"
+edition = "2021"
+description = "Real-time speech recognition and translation for Dynamic Island"
+
+[[bin]]
+name = "live-translator"
+path = "src/main.rs"
+
+[[bin]]
+name = "test-whisper"
+path = "src/bin/test_whisper.rs"
+
+[dependencies]
+
+# ASR: Whisper tiny via candle-transformers (pure Rust)
+# NMT: Marian OPUS-MT via candle-transformers (pure Rust)
+candle-core = "0.10"
+candle-nn = "0.10"
+candle-transformers = "0.10"
+# Audio capture
+cpal = "0.15"
+
+# Concurrency
+crossbeam-channel = "0.5"
+
+# Misc
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+libc = "0.2"
