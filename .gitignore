@@ -4,9 +4,6 @@ models/
 # Rust 构建产物 (~1.5GB)
 target/
 
-# 修复版 ctranslate2 crate（patch 用）
-ctranslate2-fixed/
-
 # IDE
 .idea/
 .vscode/
